@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101c2c" />
+  <title>Biscotto e il Regno dei Funghi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Biscotto, torna all'inizio"><span class="brand-mark">B</span><span>BISCOTTO<span class="brand-sub">PICCOLE ZAMPE, GRANDI AVVENTURE</span></span></a>
+      <div class="top-actions"><span class="chapter-tag"><i></i> AVVENTURA 2D</span><button class="icon-button" id="soundBtn" aria-label="Attiva o disattiva audio" title="Audio">♫</button></div>
+    </header>
+
+    <section class="game-layout" aria-label="Gioco Biscotto">
+      <div class="game-column">
+        <div class="game-heading"><div><p class="eyebrow">UNA STORIA DI CODE SCODINZOLANTI</p><h1>Biscotto <span>e il Regno dei Funghi</span></h1></div><div class="chapter-number"><span>CAPITOLO</span><b id="chapterNum">01</b></div></div>
+        <div class="game-frame" id="gameFrame">
+          <canvas id="game" width="480" height="270" aria-label="Gioco platform di Biscotto"></canvas>
+          <div class="screen-overlay" id="titleOverlay">
+            <div class="title-card"><div class="dog-badge">🐾</div><p class="eyebrow">IL BOSCO TI ASPETTA</p><h2>Un’avventura<br><em>con il naso all’insù.</em></h2><p>Salta, esplora e segui le briciole. Il bosco nasconde più di un segreto.</p><button class="primary-button" id="startBtn">INIZIA L’AVVENTURA <span>→</span></button><small>NESSUNA ZAMPA LASCIATA INDIETRO</small></div>
+          </div>
+          <div class="game-hud" id="gameHud" hidden>
+            <div class="hud-stage"><span class="hud-dot"></span><span id="levelName">IL SENTIERO DEI FUNGHI</span></div>
+            <div class="hud-items"><span class="hud-bone">✦</span><span id="itemCount">0 / 3</span><span class="hud-divider"></span><span class="hud-heart">♥</span><span id="lifeCount">3</span></div>
+            <button class="hud-pause" id="pauseBtn" aria-label="Pausa">Ⅱ</button>
+          </div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+          <div class="completion-card" id="completion" hidden><span class="complete-icon">✦</span><p class="eyebrow">BRAVISSIMO, BISCOTTO!</p><h2 id="completeTitle">Sentiero completato</h2><p id="completeText">Hai trovato tutte le briciole.</p><button class="primary-button" id="continueBtn">CONTINUA <span>→</span></button></div>
+          <div class="mobile-controls" id="mobileControls" aria-label="Comandi touch">
+            <div class="move-controls"><button data-control="left" aria-label="Sinistra">←</button><button data-control="right" aria-label="Destra">→</button></div>
+            <div class="action-controls"><button class="interact-control" data-control="interact" aria-label="Interagisci">◎<small>AZIONE</small></button><button class="jump-control" data-control="jump" aria-label="Salta">↑<small>SALTA</small></button></div>
+          </div>
+        </div>
+        <div class="below-game"><div class="control-hint"><span class="keycap">←</span><span class="keycap">→</span><span>muovi</span><span class="keycap">SPAZIO</span><span>salta</span><span class="keycap">E</span><span>interagisci</span></div><span class="pixel-note"><i></i> PIXEL PER PIXEL, FATTO CON AMORE</span></div>
+      </div>
+
+      <aside class="side-panel">
+        <div class="quest-card"><div class="card-label"><span>LA MISSIONE</span><span class="tiny-star">✦</span></div><h2 id="questTitle">Le briciole<br>perdute</h2><p id="questText">Il vento ha sparpagliato i biscotti di Nonna. Recuperali e trova l’uscita del bosco!</p><div class="quest-progress"><div class="progress-copy"><span>BRICIOLE TROVATE</span><b id="questProgress">0 / 3</b></div><div class="progress-track"><i id="progressFill"></i></div></div></div>
+        <div class="tip-card"><div class="tip-icon">☼</div><div><span class="card-label">CONSIGLIO DEL BOSCO</span><p id="tipText">Quel vecchio tronco sembra un po’ sospetto… prova ad avvicinarti e premere <b>E</b>.</p></div></div>
+        <div class="map-card"><div class="card-label"><span>IL TUO VIAGGIO</span><span class="map-count">01 <i>/</i> 02</span></div><div class="route"><div class="route-line"></div><div class="route-stop active"><span>01</span><div><b>Sentiero dei funghi</b><small>IL BOSCO INIZIA QUI</small></div></div><div class="route-stop locked" id="routeSecond"><span>02</span><div><b>Rovine di muschio</b><small>UNA PORTA SI APRIRÀ</small></div></div></div></div>
+        <div class="footer-note">CREATO PER PICCOLI ESPLORATORI <span>♥</span></div>
+      </aside>
+    </section>
+    <footer class="site-footer"><span>© 2025 BISCOTTO’S TALE</span><span>UN PICCOLO GIOCO, UN GRANDE BOSCO</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
